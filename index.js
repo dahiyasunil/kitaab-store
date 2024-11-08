@@ -1,6 +1,7 @@
 const { initializeDatabase } = require("./db/db.connect");
 const Book = require("./models/book.models");
 const express = require("express");
+const cors = require("cors");
 require("dotenv").config();
 
 initializeDatabase();
@@ -8,6 +9,7 @@ initializeDatabase();
 const PORT = process.env.PORT;
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 // * Create new book data
