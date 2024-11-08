@@ -284,6 +284,35 @@ app.post("/books/rating/title/:bookTitle", async (req, res) => {
   }
 });
 
+// * Delete book by Id
+const deleteBookById = async (bookId) => {
+  try {
+    return await Book.findByIdAndDelete(bookId);
+  } catch (err) {
+    throw err;
+  }
+};
+
+app.delete("/books/delete/id/:id", async (req, res) => {
+  try {
+    const deletedBook = await deleteBookById(req.params.id);
+    if (deletedBook) {
+      res.status(200).json({
+        message: `Book deleted successfully`,
+        deletedBook: deletedBook,
+      });
+    } else {
+      res
+        .status(200)
+        .json({ message: `No book found by Id: ${req.params.id}` });
+    }
+  } catch (err) {
+    res
+      .status(500)
+      .json({ message: `Failed to delete book.`, errMsg: `${err}` });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
