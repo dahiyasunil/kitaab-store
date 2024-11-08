@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "7f2c6f57-e26b-459e-9c7e-0b80910bd28e",
+		"name": "Vercel_BE4_Assignment1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8297172",
+		"_collection_link": "https://orange-meadow-376121.postman.co/workspace/LearnAPITesting~a02bb063-6ac2-4e90-b218-c62ff3766fb7/collection/8297172-7f2c6f57-e26b-459e-9c7e-0b80910bd28e?action=share&source=collection_link&creator=8297172"
+	},
+	"item": [
+		{
+			"name": "getAllBooks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://be-4-assignment1-five.vercel.app/books",
+					"protocol": "https",
+					"host": [
+						"be-4-assignment1-five",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addNewBook",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Shoe Dog\",\n    \"author\": \"Phil Knight\",\n    \"publishedYear\": 2016,\n    \"genre\": [\n        \"Autobiography\",\n        \"Business\"\n    ],\n    \"language\": \"English\",\n    \"country\": \"United States\",\n    \"rating\": 4.5,\n    \"summary\": \"An inspiring memoir by the co-founder of Nike, detailing the journey of building a global athletic brand.\",\n    \"coverImageUrl\": \"https://example.com/shoe_dog.jpg\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://be-4-assignment1-five.vercel.app/books",
+					"protocol": "https",
+					"host": [
+						"be-4-assignment1-five",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBookByTitle",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://be-4-assignment1-five.vercel.app/books/The Power of Habit",
+					"protocol": "https",
+					"host": [
+						"be-4-assignment1-five",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"books",
+						"The Power of Habit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBooksByAuthor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://be-4-assignment1-five.vercel.app/books/authors/Harper Lee",
+					"protocol": "https",
+					"host": [
+						"be-4-assignment1-five",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"books",
+						"authors",
+						"Harper Lee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBooksByGenre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://be-4-assignment1-five.vercel.app/books/genres/Business",
+					"protocol": "https",
+					"host": [
+						"be-4-assignment1-five",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"books",
+						"genres",
+						"Business"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBooksByPublishedYear",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://be-4-assignment1-five.vercel.app/books/publishedYear/2012",
+					"protocol": "https",
+					"host": [
+						"be-4-assignment1-five",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"books",
+						"publishedYear",
+						"2012"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateBookRatingById",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"rating\": 4.2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://be-4-assignment1-five.vercel.app/books/rating/id/672c72a8d433892d74f4761f",
+					"protocol": "https",
+					"host": [
+						"be-4-assignment1-five",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"books",
+						"rating",
+						"id",
+						"672c72a8d433892d74f4761f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateBookRatingByTitle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"publishedYear\": 2018,\n    \"rating\": 4.4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://be-4-assignment1-five.vercel.app/books/rating/title/Shoe Dog",
+					"protocol": "https",
+					"host": [
+						"be-4-assignment1-five",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"books",
+						"rating",
+						"title",
+						"Shoe Dog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteBookById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://be-4-assignment1-five.vercel.app/books/delete/id/672d63dbf05f1c20c470d4b4",
+					"protocol": "https",
+					"host": [
+						"be-4-assignment1-five",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"books",
+						"delete",
+						"id",
+						"672d63dbf05f1c20c470d4b4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
